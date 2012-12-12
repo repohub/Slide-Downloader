@@ -200,9 +200,9 @@ def parseAndSaveSwfFilesFromDocin(fileUrl = 'http://www.docin.com/p-35443942.htm
 		print "retriving file: %s..." % tempSwfName
 		try :
 			if docNum == 1:
-				urllib.urlretrieve ('http://file1.yimk.com/docin_%s.docin' % docId, tempSwfName)
+				urllib.urlretrieve ('http://file.vonibo.com/docin_%s.docin' % docId, tempSwfName)
 			else:
-				urllib.urlretrieve ('http://file1.yimk.com/docin_%s_%d.docin' % (docId,docNum), tempSwfName)
+				urllib.urlretrieve ('http://file.vonibo.com/docin_%s_%d.docin' % (docId,docNum), tempSwfName)
 		except (OSError, IOError) as e: 
 			print e
 			continue
@@ -255,9 +255,9 @@ def parseAndSaveSwfFilesFromDocin(fileUrl = 'http://www.docin.com/p-35443942.htm
 def convertImageToPDF(_fileName, _swfslides, isDocin):
 	print "convecting files to pdf..."
 	pdfCanvas = canvas.Canvas('%s.pdf' % _fileName, pagesize=portrait(A4))
-	pdfCanvas.drawString(150,700,"Welcome to flash slides downloader");
-	pdfCanvas.drawString(180,680,"contact: huzhili@gmail.com");
-	pdfCanvas.showPage()
+	#pdfCanvas.drawString(150,700,"Welcome to flash slides downloader");
+	#pdfCanvas.drawString(180,680,"contact: huzhili@gmail.com");
+	#pdfCanvas.showPage()
 	numberOfSlides = 1
 	for iswf in _swfslides:
 		doc = gfx.open("swf", iswf)
